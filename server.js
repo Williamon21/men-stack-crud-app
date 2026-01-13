@@ -28,7 +28,7 @@ app.set("view engine", "ejs");
 
 // GET /
 app.get("/", (req, res) => {
-  res.redirect("/monsters");
+  res.render("index.ejs");
 });
 
 // GET /monsters/new
