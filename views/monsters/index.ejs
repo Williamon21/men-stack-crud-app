@@ -1,0 +1,27 @@
+<!-- views/monsters/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monsters Index</title>
+  </head>
+  <body>
+    <h1>All Monsters</h1>
+
+    <ol>
+      <% monsters.forEach(monster => { %>
+  <li>
+    <a href="/monsters/<%= monster._id %>">
+      <%= monster.name %> — <%= monster.weakness %>
+    </a>
+  </li>
+<% }) %>
+
+    </ol>
+
+    <a href="/monsters/new">Add New Monster</a>
+
+  </body>
+</html>

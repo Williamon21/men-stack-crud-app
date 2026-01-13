@@ -1,0 +1,42 @@
+edit.ejs
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Monster</title>
+</head>
+<body>
+
+  <h1>Edit <%= monster.name %></h1>
+
+  <form action="/monsters/<%= monster._id %>?_method=PUT" method="POST">
+
+    <label for="name">Monster Name:</label>
+    <input
+      type="text"
+      name="name"
+      id="name"
+      value="<%= monster.name %>"
+      required
+    />
+
+    <label for="weakness">Monster Weakness:</label>
+    <input
+      type="text"
+      name="weakness"
+      id="weakness"
+      value="<%= monster.weakness %>"
+      required
+    />
+
+    <button type="submit">Update Monster <%= monster.name %></button>
+
+  </form>
+
+  <br>
+
+  <a href="/monsters">Back to Monsters Collection</a>
+
+</body>
+</html>

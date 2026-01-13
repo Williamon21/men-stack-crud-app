@@ -1,0 +1,32 @@
+<!-- views/monsters/show.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= monster.name %></title> <!-- Dynamic title -->
+  </head>
+  <body>
+    <h1>MONSTER DETAILS</h1>
+
+    <p> MONSTER NAME: <%= monster.name %> </p>
+    <p> MONSTER WEAKNESS: <%= monster.weakness %> </p>
+
+    <!-- delete button -->
+    <form action="/monsters/<%= monster._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete <%= monster.name %></button>
+    </form>
+
+    <br>
+
+    <!-- edit link -->
+    <a href="/monsters/<%= monster._id %>/edit">
+      Edit <%= monster.name %>
+    </a>
+
+    <br>
+
+    <a href="/monsters">Back to Monsters Collection</a>
+  </body>
+</html>
